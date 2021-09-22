@@ -95,7 +95,8 @@ $('body').terminal({
     this.echo('Use the commands to continue with this terminal:\n\njoin <id>: join a quiz\nrestart: restart this quiz\nnew <link to form>: create new form');
   },
   restart: function() {
-    this.echo('Use the commands to continue with this terminal:\n\njoin <id>: join a quiz\nrestart: restart this quiz\nnew <link to form>: create new form');
+  	this.echo("Reloading Server...");
+    this.echo(window.location.href = window.location.href);
   },
 }, {
   greetings: 'SchoolTestHelp Terminal has loaded.\n(c) Copyright Greatly Gravitate Systems. All Rights Reserved.\nType help for a list of commands'
