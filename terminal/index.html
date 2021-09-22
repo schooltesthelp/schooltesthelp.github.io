@@ -98,6 +98,10 @@ $('body').terminal({
   	this.echo("Reloading Server...");
     this.echo(window.location.href = window.location.href);
   },
+  join: function(id) {
+  	this.echo("Joining quiz...");
+    this.echo(window.location.href = 'https://schooltesthelp.000webhostapp.com/join.php?id=' + id);
+  },
 }, {
   greetings: 'SchoolTestHelp Terminal has loaded.\n(c) Copyright Greatly Gravitate Systems. All Rights Reserved.\nType help for a list of commands'
 });
