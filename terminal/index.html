@@ -90,10 +90,9 @@ $(".custom-menu li").click(function(){
 <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
 <script>
 $('body').terminal({
-  hello: function(name) {
-    this.echo('Hello, ' + name +
-      '. Welcome to the Rapocrythia command line.');
-  }
+  help: function() {
+    this.echo('Use the commands to continue with this terminal:\n\njoin <id>: join a quiz\nrestart: restart this quiz\nnew <link to form>: create new form');
+  },
 }, {
   greetings: 'SchoolTestHelp Terminal has loaded.\n(c) Copyright Greatly Gravitate Systems. All Rights Reserved.'
 });
