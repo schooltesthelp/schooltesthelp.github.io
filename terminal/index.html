@@ -3,7 +3,7 @@
 <head>
 <!-- Create custom menu-->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
-  <title>SchoolTestHelp terminal - &#8212;
+  <title>terminal - &#8212; schooltesthelp_interface
 </title>
 <ul class='custom-menu'>
   <li data-action="first">Restart Terminal</li>
@@ -89,10 +89,13 @@ $(".custom-menu li").click(function(){
 <link href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 <script>
+
 $('body').terminal({
   help: function() {
-    this.echo('Use the commands to continue with this terminal:\n\njoin <id>: join a quiz\nrestart: restart this quiz\nnew <link to form>: create new form');
+    this.echo('Use the commands to continue with this terminal:\n\njoin <id>: join a quiz\nrestart: restart this quiz\nnew: create new form');
   },
   restart: function() {
   	this.echo("Reloading Server...");
@@ -101,6 +104,10 @@ $('body').terminal({
   join: function(id) {
   	this.echo("Joining quiz...");
     this.echo(window.location.href = 'https://schooltesthelp.000webhostapp.com/join.php?id=' + id);
+  },
+  new: function() {
+  	this.echo("Creating new form...");
+    this.echo(window.location.href = 'https://schooltesthelp.000webhostapp.com/creator');
   },
 }, {
   greetings: 'SchoolTestHelp Terminal has loaded.\n(c) Copyright Greatly Gravitate Systems. All Rights Reserved.\nType help for a list of commands'
