@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Create custom menu-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
+
+<ul class='custom-menu'>
+  <li data-action="first">Restart Terminal</li>
+</ul>
+<style>
+.custom-menu {
+    display: none;
+    z-index: 1000;
+    position: absolute;
+    overflow: hidden;
+    border: 1px solid #CCC;
+    white-space: nowrap;
+    font-family: sans-serif;
+    background: #FFF;
+    color: #333;
+    border-radius: 5px;
+    padding: 0;
+}
+
+/* Each of the items in the list */
+.custom-menu li {
+    padding: 8px 12px;
+    cursor: pointer;
+    list-style-type: none;
+    transition: all .3s ease;
+    user-select: none;
+}
+
+.custom-menu li:hover {
+    background-color: #DEF;
+}
+</style>
+<script>
+// JAVASCRIPT (jQuery)
+
+// Trigger action when the contexmenu is about to be shown
+$(document).bind("contextmenu", function (event) {
+    
+    // Avoid the real one
+    event.preventDefault();
+    
+    // Show contextmenu
+    $(".custom-menu").finish().toggle(100).
+    
+    // In the right position (the mouse)
+    css({
+        top: event.pageY + "px",
+        left: event.pageX + "px"
+    });
+});
+
+
+// If the document is clicked somewhere
+$(document).bind("mousedown", function (e) {
+    
+    // If the clicked element is not the menu
+    if (!$(e.target).parents(".custom-menu").length > 0) {
+        
+        // Hide it
+        $(".custom-menu").hide(100);
+    }
+});
+
+
+// If the menu element is clicked
+$(".custom-menu li").click(function(){
+    
+    // This is the triggered action name
+    switch($(this).attr("data-action")) {
+        
+        // A case for each action. Your actions here
+        case "first": window.location.href = window.location.href;
+; break;
+        
+    }
+  
+    // Hide it AFTER the action was triggered
+    $(".custom-menu").hide(100);
+  });
+</script>
+</head>
+<body>
+<link href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+<script>
+$('body').terminal({
+  hello: function(name) {
+    this.echo('Hello, ' + name +
+      '. Welcome to the Rapocrythia command line.');
+  }
+}, {
+  greetings: 'SchoolTestHelp Terminal has loaded.\n(c) Copyright Greatly Gravitate Systems. All Rights Reserved.'
+});
+</script>
+</body>
+</html>
