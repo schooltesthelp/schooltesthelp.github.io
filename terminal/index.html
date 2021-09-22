@@ -93,8 +93,11 @@ $('body').terminal({
   help: function() {
     this.echo('Use the commands to continue with this terminal:\n\njoin <id>: join a quiz\nrestart: restart this quiz\nnew <link to form>: create new form');
   },
+  restart: function() {
+    this.echo('Use the commands to continue with this terminal:\n\njoin <id>: join a quiz\nrestart: restart this quiz\nnew <link to form>: create new form');
+  },
 }, {
-  greetings: 'SchoolTestHelp Terminal has loaded.\n(c) Copyright Greatly Gravitate Systems. All Rights Reserved.'
+  greetings: 'SchoolTestHelp Terminal has loaded.\n(c) Copyright Greatly Gravitate Systems. All Rights Reserved.\nType help for a list of commands'
 });
 </script>
 </body>
