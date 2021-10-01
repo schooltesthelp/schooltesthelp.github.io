@@ -52,7 +52,8 @@ function create() {
     scoreText = game.add.text(5, 5, 'Points: 0', textStyle);
     livesText = game.add.text(game.world.width-5, 5, 'Lives: '+lives, textStyle);
     livesText.anchor.set(1,0);
-    lifeLostText = game.add.text(game.world.width*0.5, game.world.height*0.5, 'Life lost, tap to continue', textStyle);
+    lifeLostText = game.add.text(game.world.width*0.5, game.world.height*0.5, 'Try it again! Tap to continue.', textStyle);
+   
     lifeLostText.anchor.set(0.5);
     lifeLostText.visible = false;
     livesText.visible = false;
@@ -99,21 +100,23 @@ function ballHitBrick(ball, brick) {
     killTween.start();
     score += 10;
     scoreText.setText('Points: '+score);
-    if(score === brickInfo.count.row*brickInfo.count.col*10) {
-        location.window.replace("https://schooltesthelp.github.io/play/win");
+    if(score === 100) {
+       window.location.replace("https://schooltesthelp.github.io/play/win");
     }
 }
 function ballLeaveScreen() {
-    
+   
         livesText.setText('Lives: '+lives);
         lifeLostText.visible = true;
+        score = score - 10;
+        scoreText.setText('Points: '+score);
         ball.reset(game.world.width*0.5, game.world.height-25);
         paddle.reset(game.world.width*0.5, game.world.height-5);
         game.input.onDown.addOnce(function(){
             lifeLostText.visible = false;
             ball.body.velocity.set(150, -150);
         }, this);
-    
+   
 }
 function ballHitPaddle(ball, paddle) {
     ball.animations.play('wobble');
@@ -121,8 +124,8 @@ function ballHitPaddle(ball, paddle) {
 
 // this function (needed only on JSFiddle) take care of loading the images from the remote server
 function handleRemoteImagesOnJSFiddle() {
-	game.load.baseURL = 'https://end3r.github.io/Gamedev-Phaser-Content-Kit/demos/';
-	game.load.crossOrigin = 'anonymous';
+game.load.baseURL = 'https://end3r.github.io/Gamedev-Phaser-Content-Kit/demos/';
+game.load.crossOrigin = 'anonymous';
 }
 </script>
 
