@@ -140,7 +140,7 @@ fetch('https://schooltesthelp.000webhostapp.com/x-frame.php?link=' + link)
   console.log(data.error)
   
   if (data.error == true) {
-  document.getElementById("iframe-holder").innerHTML = '<iframe src="' + link + '" is="x-frame-bypass" id="iframe-result"></iframe>';
+  document.getElementById("iframe-holder").innerHTML = '<iframe src="' + link + '" is="x-frame-bypass" id="iframe-result" style="width: 100%; height: 710px; overflow: auto;"></iframe>';
   } else {
   	document.getElementById("iframe-holder").innerHTML = '<iframe src="' + link + '" id="iframe-result" style="width: 100%; height: 710px; overflow: auto;"></iframe>';
   }
