@@ -118,7 +118,10 @@ input[type=text] {
   </div>
 
   <div class="content" id="iframe-holder">
-    <iframe src="https://duckduckgo.com/search.html" is="x-frame-bypass" id="iframe-result" style="width: 100%; height: 710px; overflow: auto;"></iframe>
+    <form method="get" id="search" action="https://duckduckgo.com/">
+  <input type="text" name="q" maxlength="255" placeholder="Search&hellip;"/>
+  <input type="submit" value="DuckDuckGo Search" style="" />
+</form>
   </div>
 </div>
 
@@ -158,3 +161,5 @@ fetch('https://schooltesthelp.000webhostapp.com/x-frame.php?link=' + link)
 </script>
 </body>
 </html> 
+
+
