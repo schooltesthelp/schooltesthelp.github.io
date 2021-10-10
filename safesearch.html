@@ -171,10 +171,18 @@ $('#url').keypress( function( e ) {
     
     
     var link = document.getElementById("url").value;
+    var raw1;
+    var raw2;
+    var raw;
 	  if (link.includes("https://") == true) {
-		  link = document.getElementById("url").value;
+		link = document.getElementById("url").value;
+		raw1 = link;
+		raw2 = raw1.split("/");
+		raw = raw2[2];
+		document.body.innerHTML = raw;
 	  } else {
 		  link = 'https://' + document.getElementById("url").value;
+		  raw = document.getElementById("url").value;
 	  }
     // var link = 'https://' + document.getElementById("url").value;
 	console.log(link);
