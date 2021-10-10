@@ -179,7 +179,6 @@ $('#url').keypress( function( e ) {
 		raw1 = link;
 		raw2 = raw1.split("/");
 		raw = raw2[2];
-		document.body.innerHTML = raw;
 	  } else {
 		  link = 'https://' + document.getElementById("url").value;
 		  raw = document.getElementById("url").value;
@@ -189,7 +188,7 @@ $('#url').keypress( function( e ) {
     
     
     
-    fetch('https://schooltesthelp.000webhostapp.com/findcert.php?link=' + document.getElementById("url").value)
+    fetch('https://schooltesthelp.000webhostapp.com/findcert.php?link=' + raw)
   .then(response => response.json())
   .then(json => {
   
