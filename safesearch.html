@@ -130,7 +130,7 @@ $('#url').keypress( function( e ) {
 
   if( code === 13 ) {
     e.preventDefault();
-    var link = 'https://' + document.getElementById("url").value;
+    var link = document.getElementById("url").value;
 	  if (link.includes("https://") == true) {
 		  link = document.getElementById("url").value;
 	  } else {
