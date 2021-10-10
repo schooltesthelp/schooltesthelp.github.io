@@ -8,6 +8,19 @@
 	<title>SafeSearch</title>
 	<link rel="shortcut icon" type="image/jpg" href="download.png"/>
 <style>
+*{
+    margin:0px;
+    padding: 0px;
+}
+#footer {
+    position:absolute;
+    bottom:0px;
+    width:100%;
+    height:50px;
+    background:dodgerblue;
+    display:none;
+}
+	
 body {
   font-family: Arial
 }
@@ -107,6 +120,7 @@ input[type=text] {
   margin: 4px 2px;
   cursor: pointer;
 }
+	
 </style>
 </head>
 <body>
@@ -173,6 +187,35 @@ fetch('https://schooltesthelp.000webhostapp.com/x-frame.php?link=' + link)
 	
   }
 })
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+console.log($(document).height());
+var hidden = true;
+window.onmousemove = function (e) {
+    console.log(e.pageY);
+    if (e.pageY >= $(document).height() - 50) {
+        if (hidden) {
+            $('#footer').slideDown();
+            hidden = false;
+        }
+    } 
+    else{
+        $('#footer').slideUp();
+        hidden=true;
+    }
+        
+    
+}
 </script>
 </body>
 </html> 
