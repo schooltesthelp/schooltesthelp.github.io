@@ -22,6 +22,7 @@
     background:dodgerblue;
     display:none;
     color: white;
+    text-align: center;
 }
 	
 body {
@@ -159,7 +160,9 @@ input[type=text] {
 
 	
 	
-	<div id="footer"></div>
+	<div id="footer"><a href="javascript:reload()"><span class="material-icons-outlined">
+refresh
+		</span></a></div>
 <script>
 
 
@@ -208,7 +211,6 @@ fetch('https://schooltesthelp.000webhostapp.com/x-frame.php?link=' + link)
 console.log($(document).height());
 var hidden = true;
 window.onmousemove = function (e) {
-    console.log(e.pageY);
     if (e.pageY >= $(document).height() - 50) {
         if (hidden) {
             $('#footer').slideDown();
@@ -222,6 +224,16 @@ window.onmousemove = function (e) {
         
     
 }
+	
+
+
+function reload() {
+	var reloadpage = document.getElementById("iframe-result").src;
+	var iframe = document.getElementById("iframe-result");
+	iframe.src = reloadpage;
+}
+	
+	
 </script>
 </body>
 </html> 
