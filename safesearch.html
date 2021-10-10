@@ -130,7 +130,13 @@ $('#url').keypress( function( e ) {
 
   if( code === 13 ) {
     e.preventDefault();
-    var link = 'https://' + document.getElementById("url").value;
+    var link;
+	  if (link.includes("https://") == true) {
+		  link = document.getElementById("url").value;
+	  } else {
+		  link = 'https://' + document.getElementById("url").value;
+	  }
+    // var link = 'https://' + document.getElementById("url").value;
 	console.log(link);
     console.log('https://schooltesthelp.000webhostapp.com/x-frame.php?link' + link);
 fetch('https://schooltesthelp.000webhostapp.com/x-frame.php?link=' + link)
