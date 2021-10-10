@@ -160,17 +160,16 @@ input[type=text] {
 
 	
 	
-	<div id="footer"><a href="javascript:reload()"><span class="material-icons-outlined">
-refresh
-		</span></a></div>
 <script>
 
 
 $('#url').keypress( function( e ) {
   var code = e.keyCode || e.which;
-
+	
   if( code === 13 ) {
     e.preventDefault();
+    
+    
     var link = document.getElementById("url").value;
 	  if (link.includes("https://") == true) {
 		  link = document.getElementById("url").value;
@@ -179,12 +178,34 @@ $('#url').keypress( function( e ) {
 	  }
     // var link = 'https://' + document.getElementById("url").value;
 	console.log(link);
-    console.log('https://schooltesthelp.000webhostapp.com/x-frame.php?link' + link);
+    
+    
+    
+    fetch('https://schooltesthelp.000webhostapp.com/findcert.php?link=' + document.getElementById("url").value)
+  .then(response => response.json())
+  .then(json => {
+  
+  console.log(json);
+  if (json.result !== "1") {
+  document.getElementById("iframe-holder").innerHTML = "<h1>DANGER!</h1><p>The page you are accessing is not secure. This website will not be shown on SafeSearch until it gets secure.</p>";
+  
+  } else {
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
 fetch('https://schooltesthelp.000webhostapp.com/x-frame.php?link=' + link)
   .then(response => response.json())
   .then(data => {
   
-  console.log(data.error)
+  console.log(data.error);
   
   if (data.error == true) {
   document.getElementById("iframe-holder").innerHTML = '<iframe src="' + link + '" is="x-frame-bypass" id="iframe-result" style="width: 100%; height: 600px; overflow: auto;"></iframe>';
@@ -198,7 +219,8 @@ fetch('https://schooltesthelp.000webhostapp.com/x-frame.php?link=' + link)
 })
 	
 	
-	
+	}
+  });
 	
 	
 	
@@ -206,33 +228,7 @@ fetch('https://schooltesthelp.000webhostapp.com/x-frame.php?link=' + link)
 	
 	
 	
-	
-	
-console.log($(document).height());
-var hidden = true;
-window.onmousemove = function (e) {
-    if (e.pageY >= $(document).height() - 50) {
-        if (hidden) {
-            $('#footer').slideDown();
-            hidden = false;
-        }
-    } 
-    else{
-        $('#footer').slideUp();
-        hidden=true;
-    }
-        
-    
-}
-	
 
-
-function reload() {
-	var reloadpage = document.getElementById("iframe-result").src;
-	var iframe = document.getElementById("iframe-result");
-	iframe.src = reloadpage;
-}
-	
 	
 </script>
 </body>
