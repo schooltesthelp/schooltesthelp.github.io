@@ -12,10 +12,10 @@ echo ''
 wget https://schooltesthelp.github.io/safesearch/ssh/safesearch.webmanifest
 echo ''
 echo ''
-wget https://schooltesthelp.github.io/safesearch/styles.css
+wget https://schooltesthelp.github.io/safesearch/ssh/styles.css
 echo ''
 echo ''
-wget https://schooltesthelp.github.io/safesearch/sw.js
+wget https://schooltesthelp.github.io/safesearch/ssh/sw.js
 echo ''
 echo ''
 echo ''
@@ -56,16 +56,5 @@ do
     sleep 0.1
     ProgressBar ${number} ${_end}
 done
-printf 'Using nohup...'
+printf 'Type localhost:55550 to open\n'
 nohup python3 -m http.server 55550
-echo ''
-echo ''
-echo ''
-echo ''
-echo ''
-echo ''
-echo ''
-echo ''
-echo ''
-echo ''
-echo 'Visit localhost:55550 to open terminal.'
