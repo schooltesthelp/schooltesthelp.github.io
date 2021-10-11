@@ -1,0 +1,8 @@
+{
+    "name": "SafeSearch",
+    "short_name": "SafeSearch",
+    "description": "Search Smarter: SafeSearch",
+    "icons": [],
+    "start_url": "/safesearch/index.html",
+    "display": "fullscreen"
+  }

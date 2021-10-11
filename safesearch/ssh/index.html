@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+<script type="module" src="https://unpkg.com/x-frame-bypass"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<title>SafeSearch</title>
+<link rel="shortcut icon" type="image/jpg" href="https://schooltesthelp.github.io/download.png"/>
+<meta name="description" content="A safer browser: SafeSearch">
+<meta name="author" content="Greatly Gravitate">
+<meta charset="utf-8">
+<meta property="og:image" content="icons/icon-512.png">
+<script src="app.js" defer></script>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="safesearch.webmanifest">
+<link rel="manifest" href="safesearch.webmanifest">
+</head>
+<body>
+
+<div class="container row-container">
+  <div class="row">
+    <div class="column left">
+      <span class="dot" style="background:#ED594A;"></span>
+      <span class="dot" style="background:#FDD800;"></span>
+      <span class="dot" style="background:#5AC05A;"></span>
+    </div>
+    <div class="column middle">
+      <input type="text" placeholder="Type a url here" id="url">
+    </div>
+    <div class="column right">
+      <div style="float:right">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content" id="iframe-holder">
+    <form method="get" id="search" action="https://duckduckgo.com/">
+  <input type="text" name="q" maxlength="255" placeholder="Search&hellip;" type="search" />
+  <input type="submit" value="DuckDuckGo Search" style="padding: 10px 24px;" class="button"/>
+	    <br>
+	    <a href="safesearch/help">Help</a>
+</form>
+  </div>
+</div>
+</body>
+</html> 
+
+
