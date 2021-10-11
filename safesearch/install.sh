@@ -56,5 +56,5 @@ do
     sleep 0.1
     ProgressBar ${number} ${_end}
 done
-printf 'Type localhost:55550 to open\n'
-nohup python3 -m http.server 55550
+printf 'Type localhost:5000 to open\n'
+nohup python3 -m http.server 5000
