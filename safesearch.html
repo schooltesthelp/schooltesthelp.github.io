@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -182,10 +183,15 @@ $('#url').keypress( function( e ) {
 	  } else {
 		  link = 'https://' + document.getElementById("url").value;
 		  raw = document.getElementById("url").value;
+          if (document.getElementById("url").value.includes("/") == true) {
+          	raw1 = document.getElementById("url").value;
+            raw2 = raw1.split("/");
+            raw = raw2[0];
+          }
 	  }
     // var link = 'https://' + document.getElementById("url").value;
 	console.log(link);
-    
+    console.log(raw);
     
     
     fetch('https://schooltesthelp.000webhostapp.com/findcert.php?link=' + raw)
