@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -202,7 +203,20 @@ $('#url').keypress( function( e ) {
   
   console.log(json);
   if (json.result !== "1") {
+   fetch('https://schooltesthelp.000webhostapp.com/exists.php?link=' + raw)
+  .then(response => response.json())
+  .then(jsondata => {
+  
+  if(jsondata.exists == "1") {
+  
   document.getElementById("iframe-holder").innerHTML = "<h1>DANGER!</h1><p>The page you are accessing is not secure. This website will not be shown on SafeSearch until it gets secure.</p>";
+  
+  } else {
+  
+  document.getElementById("iframe-holder").innerHTML = "<h1>404</h1><p>The page you are requested is not found. Make sure you typed the address correctly.</p>";
+  
+  }
+  });
   
   } else {
   
